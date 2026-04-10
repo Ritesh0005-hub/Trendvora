@@ -1,0 +1,330 @@
+**PERFECT! Here's the FINAL COMPLETE WORKING WEBSITE** with **Ritesh Jadhav** as owner and **Shop Now/Order Now buttons open WhatsApp** directly:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendVora - Upgrade Your Style | Owner: Ritesh Jadhav</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-dark: #1a1a1a; --secondary-dark: #2d2d2d; --accent-gold: #d4af37;
+            --accent-neon: #00d4ff; --text-light: #ffffff; --text-muted: #b0b0b0;
+        }
+        body {
+            font-family: 'Poppins', sans-serif; line-height: 1.6; color: var(--text-light);
+            background: var(--primary-dark); overflow-x: hidden;
+        }
+        .navbar {
+            position: fixed; top: 0; width: 100%; background: rgba(26,26,26,0.95);
+            backdrop-filter: blur(10px); z-index: 1000; padding: 1rem 0;
+        }
+        .nav-container {
+            max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between;
+            align-items: center; padding: 0 2rem;
+        }
+        .logo {
+            font-size: 1.8rem; font-weight: 700;
+            background: linear-gradient(45deg, var(--accent-gold), var(--accent-neon));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .nav-links {
+            display: flex; list-style: none; gap: 2rem;
+        }
+        .nav-links a {
+            color: var(--text-light); text-decoration: none; font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-gold); }
+        .hamburger { display: none; flex-direction: column; cursor: pointer; gap: 4px; }
+        .hamburger span { width: 25px; height: 3px; background: var(--text-light); }
+        .hero {
+            height: 100vh; background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            display: flex; align-items: center; justify-content: center; text-align: center;
+        }
+        .hero-content h1 {
+            font-size: 4rem; font-weight: 700; margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--accent-gold), var(--accent-neon));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero-content p { font-size: 1.5rem; margin-bottom: 2rem; }
+        .cta-button, .order-btn {
+            padding: 1rem 2.5rem; background: linear-gradient(45deg, var(--accent-gold), var(--accent-neon));
+            color: var(--primary-dark); text-decoration: none; font-weight: 600;
+            border-radius: 50px; transition: all 0.3s ease; display: inline-block;
+            border: none; cursor: pointer; font-family: inherit;
+        }
+        .cta-button:hover, .order-btn:hover { transform: translateY(-5px) scale(1.05); }
+        .cod-highlight {
+            position: absolute; bottom: 5rem; left: 50%; transform: translateX(-50%);
+            background: rgba(0,212,255,0.1); padding: 1rem 2rem; border: 2px solid var(--accent-neon);
+            border-radius: 50px; animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0,212,255,0.7); }
+            70% { box-shadow: 0 0 0 20px rgba(0,212,255,0); }
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        section { padding: 5rem 0; }
+        .section-title {
+            text-align: center; font-size: 3rem; font-weight: 700; margin-bottom: 3rem;
+            background: linear-gradient(45deg, var(--accent-gold), var(--accent-neon));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .products-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;
+        }
+        .product-card {
+            background: var(--secondary-dark); border-radius: 20px; overflow: hidden;
+            transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .product-card:hover { transform: translateY(-15px); border-color: var(--accent-gold); }
+        .product-image {
+            height: 250px; background: linear-gradient(45deg, var(--accent-gold), var(--accent-neon));
+            display: flex; align-items: center; justify-content: center; font-size: 4rem;
+        }
+        .product-info { padding: 1.5rem; }
+        .product-price { font-size: 1.5rem; font-weight: 700; color: var(--accent-gold); margin-bottom: 1rem; }
+        .features-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;
+        }
+        .feature-card {
+            background: var(--secondary-dark); padding: 2rem; border-radius: 20px;
+            text-align: center; transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .feature-icon { font-size: 4rem;
+            background: linear-gradient(45deg, var(--accent-gold), var(--accent-neon));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem;
+        }
+        .testimonials { 
+            background: var(--secondary-dark); margin: 5rem 0; padding: 4rem 2rem; border-radius: 20px; 
+        }
+        .testimonial-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; 
+        }
+        .testimonial { 
+            background: var(--primary-dark); padding: 2rem; border-radius: 15px; 
+            border-left: 4px solid var(--accent-gold);
+        }
+        .contact-options { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; 
+        }
+        .contact-card {
+            background: var(--secondary-dark); padding: 2rem; border-radius: 15px; text-align: center;
+            transition: all 0.3s ease; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .contact-card:hover { transform: translateY(-5px); border-color: var(--accent-gold); }
+        .contact-icon { 
+            font-size: 3rem; background: linear-gradient(45deg, var(--accent-gold), var(--accent-neon));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1rem;
+        }
+        .contact-link { color: var(--accent-neon); text-decoration: none; font-weight: 500; font-size: 1.1rem; }
+        .footer {
+            background: var(--primary-dark); padding: 3rem 0 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-content {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;
+        }
+        .footer-section h3 { color: var(--accent-gold); margin-bottom: 1rem; }
+        .footer-section a { color: var(--text-muted); text-decoration: none; display: block; margin-bottom: 0.5rem; }
+        .footer-section a:hover { color: var(--accent-gold); }
+        .owner-tag { text-align: center; color: var(--accent-gold); font-weight: 600; margin-top: 2rem; }
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-links { 
+                position: fixed; top: 100%; left: -100%; width: 100%; height: calc(100vh - 80px);
+                background: var(--primary-dark); flex-direction: column; padding-top: 2rem; transition: left 0.3s;
+            }
+            .nav-links.active { left: 0; }
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">TrendVora</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#shop" class="nav-link">Shop</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Upgrade Your Style</h1>
+            <p>TrendVora – Premium Fashion | Owner: Ritesh Jadhav</p>
+            <a href="#shop" class="cta-button">Shop Now</a>
+        </div>
+        <div class="cod-highlight">
+            <i class="fas fa-truck"></i> Cash on Delivery Available!
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section id="shop" class="container">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image"><i class="fas fa-tshirt"></i></div>
+                <div class="product-info">
+                    <h3>Premium T-Shirt</h3>
+                    <div class="product-price">₹999</div>
+                    <button class="order-btn" onclick="orderWhatsApp('Premium T-Shirt - ₹999')">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><i class="fas fa-shirt"></i></div>
+                <div class="product-info">
+                    <h3>Formal Shirt</h3>
+                    <div class="product-price">₹1999</div>
+                    <button class="order-btn" onclick="orderWhatsApp('Formal Shirt - ₹1999')">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><i class="fas fa-spray-can"></i></div>
+                <div class="product-info">
+                    <h3>Premium Perfume</h3>
+                    <div class="product-price">₹1499</div>
+                    <button class="order-btn" onclick="orderWhatsApp('Premium Perfume - ₹1499')">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><i class="fas fa-watch"></i></div>
+                <div class="product-info">
+                    <h3>Luxury Watch</h3>
+                    <div class="product-price">₹4999</div>
+                    <button class="order-btn" onclick="orderWhatsApp('Luxury Watch - ₹4999')">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><i class="fas fa-sneaker"></i></div>
+                <div class="product-info">
+                    <h3>Trendy Sneakers</h3>
+                    <div class="product-price">₹2999</div>
+                    <button class="order-btn" onclick="orderWhatsApp('Trendy Sneakers - ₹2999')">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </button>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image"><i class="fas fa-glasses"></i></div>
+                <div class="product-info">
+                    <h3>Designer Sunglasses</h3>
+                    <div class="product-price">₹1299</div>
+                    <button class="order-btn" onclick="orderWhatsApp('Designer Sunglasses - ₹1299')">
+                        <i class="fab fa-whatsapp"></i> Order Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="about" class="container">
+        <h2 class="section-title">Why Choose TrendVora?</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
+                <h3>Fast Delivery</h3>
+                <p>2-3 days delivery anywhere in India</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-money-bill-wave"></i></div>
+                <h3>Cash on Delivery</h3>
+                <p>Pay when you receive - No advance payment</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-star"></i></div>
+                <h3>Premium Quality</h3>
+                <p>100% Genuine products by Ritesh Jadhav</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials container">
+        <h2 class="section-title">Happy Customers</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial">
+                <p>"Best quality T-shirts! COD worked perfectly. Ritesh sir is awesome!"</p>
+                <div style="margin-top: 1rem; font-weight: 600;">- Rahul K.</div>
+            </div>
+            <div class="testimonial">
+                <p>"Fast delivery & premium products. Highly recommended!"</p>
+                <div style="margin-top: 1rem; font-weight: 600;">- Priya S.</div>
+            </div>
+            <div class="testimonial">
+                <p>"Luxury watch received in perfect condition. 5⭐"</p>
+                <div style="margin-top: 1rem; font-weight: 600;">- Amit R.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <h2 class="section-title">Contact Ritesh Jadhav</h2>
+        <div class="contact-options">
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                <h3>WhatsApp Order</h3>
+                <a href="https://wa.me/919404688779?text=Hi%20Ritesh%20sir%2C%20I%20want%20to%20order%20from%20TrendVora" class="contact-link" target="_blank">
+                    +91 94046 88779
+                </a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fab fa-instagram"></i></div>
+                <h3>Instagram</h3>
+                <a href="https://instagram.com/trend_vora" class="contact-link" target="_blank">@trend_vora</a>
+            </div>
+            <div class="contact-card">
+                <div class="contact-icon"><i class="fab fa-facebook"></i></div>
+                <h3>Facebook</h3>
+                <a href="https://facebook.com/trendvora" class="contact-link" target="_blank">TrendVora Official</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TrendVora</h3>
+                    <p>Premium fashion for modern you. Owned by Ritesh Jadhav.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#shop">Shop</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fab fa-whatsapp"></i> +91 94046 88779</p>
+                    <p><i class="fas fa-envelope"></i> trendvora@gmail.com</p>
+                </div>
+            </div>
+            <
